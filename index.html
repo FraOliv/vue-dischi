@@ -9,28 +9,34 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <div class="container">
-                <img src="logo.png" alt="logo" />
-            </div>
-        </header>
 
-        <div class="cds-container container">
-            <!-- Disco ad esempio -->
-            <div class="cd"  v-for="element in album" class="album"></div>>
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Ten_Summoner%27s_Tales.jpg" alt="">
-                <h3>Ten's Summoners Tales</h3>
-                <span class="author">Sting</span>
-                <span class="year">1993</span>
-            </div>
-        </div>
-        
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
 
-<script type="text/javascript" src="assets/js/script.js">
- </script>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="logo" />
+    </div>
+  </header>
+
+  <div class="cds-container container" id="root">
+    <!-- Disco ad esempio -->
+    <div v-for="(CD, index) in listaCD" :key="index" class="cd">
+      <img :src="listaCD[index].poster" alt="">
+      <h3>{{listaCD[index].title}}</h3>
+      <span class="author">{{listaCD[index].author}}</span>
+      <span class="year">{{listaCD[index].year}}</span>
+    </div>
+  </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript" src="main.js">
+    </script>
+    <!-- /JS script -->
+
 
     </body>
 </html>
